@@ -12,7 +12,7 @@ Funcionalidade: Login
         Quando eu faço login com "tony@stark.com" e "pwd123"
         Então devo ver "Tony Stark" na área logada
 
-    @login_hapless
+    @login_invalido
     Esquema do Cenario: Login sem sucesso
         Quando eu faço login com <email> e <senha>
         E devo ver a mensagem de alerta <texto>
