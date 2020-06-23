@@ -13,26 +13,23 @@ Funcionalidade: Login
         Então devo ser autenticado
         E devo ver "Tony Stark" na área logada
 
+    @login_invalido
     Cenário: Senha inválida
 
         Quando eu faço login com "tony@stark.com"​ e "abc123"
-        Então não devo ser autenticado
-        E devo ver a mensagem de alerta "Usuário e/ou senha inválidos"
+        Então devo ver a mensagem de alerta "Usuário e/ou senha inválidos"
 
     Cenário: Usuário não existe
         
         Quando eu faço login com "404@yahoo.com" e "abc123"
-        Então não devo ser autenticado
-        E devo ver a mensagem de alerta "Usuário e/ou senha inválidos"
+        Então devo ver a mensagem de alerta "Usuário e/ou senha inválidos"
 
     Cenário: Email não informado
         
         Quando eu faço login com "" e "abcxpto"
-        Então não devo ser autenticado
-        E devo ver a mensagem de alerta "Opps. Cadê o email?"
+        Então devo ver a mensagem de alerta "Opps. Cadê o email?"
 
     Cenário: Senha não informada
         
         Quando eu faço login com "teste@gmail.com" e ""
-        Então não devo ser autenticado
-        E devo ver a mensagem de alerta "Opps. Cadê a senha?" 
+        Então devo ver a mensagem de alerta "Opps. Cadê a senha?" 
