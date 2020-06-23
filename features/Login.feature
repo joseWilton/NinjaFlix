@@ -10,26 +10,18 @@ Funcionalidade: Login
     Cenário: Acesso
 
         Quando eu faço login com "tony@stark.com" e "pwd123"
-        Então devo ser autenticado
-        E devo ver "Tony Stark" na área logada
+        Então devo ver "Tony Stark" na área logada
 
-    @login_invalido
-    Cenário: Senha inválida
+    @login_hapless
+    Esquema do Cenario: Login sem sucesso
+        Quando eu faço login com <email> e <senha>
+        E devo ver a mensagem de alerta <texto>
 
-        Quando eu faço login com "tony@stark.com"​ e "abc123"
-        Então devo ver a mensagem de alerta "Usuário e/ou senha inválidos"
+        Exemplos:
+            | email             | senha     | texto                          |
+            | "tony@stark.com"  | "abc123"  | "Usuário e/ou senha inválidos" |
+            | "404@yahoo.com"   | "abc123"  | "Usuário e/ou senha inválidos" |
+            | ""                | "abcxpto" | "Opps. Cadê o email?"          |
+            | "teste@gmail.com" | ""        | "Opps. Cadê a senha?"          |
 
-    Cenário: Usuário não existe
-        
-        Quando eu faço login com "404@yahoo.com" e "abc123"
-        Então devo ver a mensagem de alerta "Usuário e/ou senha inválidos"
-
-    Cenário: Email não informado
-        
-        Quando eu faço login com "" e "abcxpto"
-        Então devo ver a mensagem de alerta "Opps. Cadê o email?"
-
-    Cenário: Senha não informada
-        
-        Quando eu faço login com "teste@gmail.com" e ""
-        Então devo ver a mensagem de alerta "Opps. Cadê a senha?" 
+    
