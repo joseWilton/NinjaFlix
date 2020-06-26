@@ -23,3 +23,9 @@ Então("devo ver a notificação {string}") do |msg|
 
     expect(@movie_page.alert).to have_text msg
 end
+
+
+Dado("este filme já existe no catálogo") do
+
+    Database.new.insert_movie(@movie)
+end
