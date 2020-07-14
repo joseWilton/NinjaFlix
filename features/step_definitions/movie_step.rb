@@ -54,5 +54,15 @@ end
 Então("este item deve ser removido do catálogo") do                           
 
     expect(@movie_page.has_no_movie(@movie["title"])).to be true
-end                                                                           
+end
+
+Quando("cancelo a solicitação") do
+
+    @movie_page.swal2_cancel
+end
+  
+Então("este item deve permanecer no catálogo") do
+
+    expect(@movie_page.has_movie(@movie["title"])).to be true
+end
  

@@ -38,6 +38,14 @@ dbz:
   cast: [""]
   overview: "Descrição de teste"
   cover: "dbz.jpg"
+10_coisas:
+  title: "10 coisas que eu odeio em você"
+  status: "Disponível"
+  year: 2012
+  release_date: "01/05/2012"
+  cast: [""]
+  overview: "Descrição de teste"
+  cover: "10coisas.jpg"
 no_title:
   title: ""
   status: "Disponível"
