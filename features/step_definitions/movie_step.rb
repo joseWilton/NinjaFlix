@@ -9,7 +9,7 @@ end
 Quando("eu faço o cadastro deste filme") do
 
     @movie_page.add
-    @movie_page.create(@movie)
+    @movie_page.form.create(@movie)
 end
 
 Então("devo ver o novo filme na lista") do
@@ -22,7 +22,7 @@ end
 
 Então("devo ver a notificação {string}") do |msg|
 
-    expect(@movie_page.alert).to have_text msg
+    expect(@movie_page.form.alert).to have_text msg
 end
 
 
@@ -48,7 +48,7 @@ end
                                                                             
 Quando("eu confirmo a solicitação") do                                        
 
-    @movie_page.swal2_confirm
+    @movie_page.sweet_alert.confirm
 end                                                                           
                                                                             
 Então("este item deve ser removido do catálogo") do                           
@@ -58,7 +58,7 @@ end
 
 Quando("cancelo a solicitação") do
 
-    @movie_page.swal2_cancel
+    @movie_page.sweet_alert.cancel
 end
   
 Então("este item deve permanecer no catálogo") do
