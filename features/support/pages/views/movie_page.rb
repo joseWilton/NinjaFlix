@@ -51,8 +51,22 @@ class Movie_page
         find("#create-movie").click
     end
 
-    def movie_tr(movie)
+    def movie_tr(title)
 
-        find('table tbody tr', text: movie["title"])
+        find('table tbody tr', text: title)
+    end
+
+    def remove(title)
+        movie_tr(title).find(".btn-trash").click
+    end
+
+    def swal2_confirm
+       
+        find('.swal2-confirm').click 
+    end
+
+    def has_no_movie(title)
+        
+        res = page.has_no_css?("table tbody tr", text: title)
     end
 end
